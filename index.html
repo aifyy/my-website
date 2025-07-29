@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aifyy - Automating Growth with Smart, Humanized Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .flow-arrow {
+            animation: flow 3s ease-in-out infinite;
+        }
+        
+        @keyframes flow {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+    </style>
+</head>
+<body style="background-color: #f1f5f9;">
+    <!-- Navigation -->
+    <nav class="shadow-sm fixed w-full top-0 z-50" style="background-color: #f1f5f9;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold" style="color: #1e3a8a;">Aifyy</div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#services" class="transition-colors" style="color: #1e3a8a;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#1e3a8a'">Services</a>
+                    <a href="#why-us" class="transition-colors" style="color: #1e3a8a;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#1e3a8a'">Why Us</a>
+                    <a href="#contact" class="transition-colors" style="color: #1e3a8a;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#1e3a8a'">Contact</a>
+                </div>
+                <button onclick="bookDemo()" class="text-white px-4 py-2 rounded-lg transition-colors" style="background-color: #1e3a8a;" onmouseover="this.style.backgroundColor='#3b82f6'" onmouseout="this.style.backgroundColor='#1e3a8a'">
+                    Book Free Demo
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-20 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                    Automating Growth with<br>
+                    <span style="color: #e0f2fe;">Smart, Humanized Systems</span>
+                </h1>
+                <p class="text-xl mb-8 max-w-3xl mx-auto" style="color: #bfdbfe;">
+                    We build scalable outreach, personal branding, and custom automation systems that bring in leads, build authority, and save you hundreds of hours every month.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="bookDemo()" class="px-8 py-4 rounded-lg font-semibold transition-colors text-lg" style="background-color: #e0f2fe; color: #1e3a8a;" onmouseover="this.style.backgroundColor='#bfdbfe'" onmouseout="this.style.backgroundColor='#e0f2fe'">
+                        Book a Free Demo
+                    </button>
+                    <button onclick="scrollToServices()" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg" onmouseover="this.style.backgroundColor='white'; this.style.color='#1e3a8a'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'">
+                        See How It Works
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Hero Visual -->
+            <div class="mt-16 flex justify-center">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-4xl">
+                    <div class="flex items-center justify-center space-x-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style="background-color: #e0f2fe;">
+                                <span class="text-2xl">📧</span>
+                            </div>
+                            <p class="text-white font-medium">Outreach</p>
+                        </div>
+                        <div class="flow-arrow text-white text-2xl">→</div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style="background-color: #e0f2fe;">
+                                <span class="text-2xl">🎥</span>
+                            </div>
+                            <p class="text-white font-medium">Personal Brand</p>
+                        </div>
+                        <div class="flow-arrow text-white text-2xl">→</div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style="background-color: #e0f2fe;">
+                                <span class="text-2xl">⚡</span>
+                            </div>
+                            <p class="text-white font-medium">Automation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem-Solution Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                    Scaling your business shouldn't feel like a full-time hustle.
+                </h2>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-xl text-gray-600 mb-8">
+                        Most founders struggle to consistently bring in leads, build their personal brand, or set up automations that actually save time. Aifyy solves this by creating <strong>done-for-you systems</strong> that:
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style="background-color: #bfdbfe;">
+                                <span class="text-2xl">🎯</span>
+                            </div>
+                            <h3 class="font-semibold mb-2" style="color: #1e3a8a;">Reach your ideal clients at scale</h3>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style="background-color: #bfdbfe;">
+                                <span class="text-2xl">👑</span>
+                            </div>
+                            <h3 class="font-semibold mb-2" style="color: #1e3a8a;">Position you as an industry authority</h3>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style="background-color: #bfdbfe;">
+                                <span class="text-2xl">🤖</span>
+                            </div>
+                            <h3 class="font-semibold mb-2" style="color: #1e3a8a;">Automate repetitive tasks with precision</h3>
+                        </div>
+                    </div>
+                    <p class="text-xl text-gray-600 mt-8">
+                        With Aifyy, you get systems that work while you focus on growing your business.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20" style="background-color: #bfdbfe;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Three Core Systems</h2>
+                <p class="text-xl text-gray-600 mb-8">Choose one or combine all three for maximum impact</p>
+                
+                <!-- Service Delivery Options -->
+                <div class="flex justify-center mb-8">
+                    <div class="bg-white rounded-lg p-6 shadow-lg max-w-4xl">
+                        <h3 class="text-xl font-semibold mb-4" style="color: #1e3a8a;">Choose Your Service Level:</h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="text-center p-4 rounded-lg" style="background-color: #e0f2fe;">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto" style="background-color: #1e3a8a;">
+                                    <span class="text-white text-xl">🚀</span>
+                                </div>
+                                <h4 class="font-semibold mb-2" style="color: #1e3a8a;">Done For You</h4>
+                                <p class="text-sm text-gray-600">We handle everything from setup to execution</p>
+                            </div>
+                            <div class="text-center p-4 rounded-lg" style="background-color: #e0f2fe;">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto" style="background-color: #3b82f6;">
+                                    <span class="text-white text-xl">🤝</span>
+                                </div>
+                                <h4 class="font-semibold mb-2" style="color: #1e3a8a;">Done With You</h4>
+                                <p class="text-sm text-gray-600">We guide you through the process together</p>
+                            </div>
+                            <div class="text-center p-4 rounded-lg" style="background-color: #e0f2fe;">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto" style="background-color: #60a5fa;">
+                                    <span class="text-white text-xl">🛠️</span>
+                                </div>
+                                <h4 class="font-semibold mb-2" style="color: #1e3a8a;">Do It Yourself</h4>
+                                <p class="text-sm text-gray-600">Get the tools and training to do it yourself</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- B2B Outreach System -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: #bfdbfe;">
+                        <span class="text-3xl">📈</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: #1e3a8a;">B2B Outreach System</h3>
+                    <p class="text-lg font-semibold mb-6" style="color: #3b82f6;">Your Sales Pipeline on Autopilot.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Hyper-personalized cold emails that don't feel cold</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Multi-channel outreach (Email + LinkedIn)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Targeted lead lists curated for your niche</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">A/B tested sequences to improve response rates</span>
+                        </li>
+                    </ul>
+                    <div class="p-4 rounded-lg mb-6" style="background-color: #e0f2fe;">
+                        <p class="font-medium italic" style="color: #1e3a8a;">
+                            "Imagine waking up every day to warm, qualified leads – without lifting a finger."
+                        </p>
+                    </div>
+                    <button onclick="bookDemo()" class="w-full text-white py-3 rounded-lg font-semibold transition-colors" style="background-color: #1e3a8a;" onmouseover="this.style.backgroundColor='#3b82f6'" onmouseout="this.style.backgroundColor='#1e3a8a'">
+                        Book Free Demo
+                    </button>
+                </div>
+
+                <!-- Personal Branding System -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border-2" style="border-color: #3b82f6;">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background-color: #bfdbfe;">
+                            <span class="text-3xl">🎬</span>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-sm font-semibold" style="background-color: #3b82f6; color: white;">POPULAR</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: #1e3a8a;">Personal Branding System</h3>
+                    <p class="text-lg font-semibold mb-6" style="color: #3b82f6;">Turn your ideas into a powerful personal brand in minutes.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Humanized videos in your avatar and voice</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Create from just text or audio notes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Build trust with authentic storytelling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">LinkedIn-ready posts and videos</span>
+                        </li>
+                    </ul>
+                    <div class="p-4 rounded-lg mb-6" style="background-color: #e0f2fe;">
+                        <p class="font-medium italic" style="color: #1e3a8a;">
+                            "Your personal brand is your biggest growth lever – let's make it effortless."
+                        </p>
+                    </div>
+                    <button onclick="bookDemo()" class="w-full text-white py-3 rounded-lg font-semibold transition-colors" style="background-color: #3b82f6;" onmouseover="this.style.backgroundColor='#1e3a8a'" onmouseout="this.style.backgroundColor='#3b82f6'">
+                        Book Free Demo
+                    </button>
+                </div>
+
+                <!-- Custom Automations -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: #bfdbfe;">
+                        <span class="text-3xl">⚙️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: #1e3a8a;">Custom Automations</h3>
+                    <p class="text-lg font-semibold mb-6" style="color: #3b82f6;">Automate the Busy Work. Focus on Impact.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">No more manual lead tracking or follow-ups</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Custom Zapier/Make workflows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">CRM, email, and analytics integrations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Save 20+ hours a week</span>
+                        </li>
+                    </ul>
+                    <div class="p-4 rounded-lg mb-6" style="background-color: #e0f2fe;">
+                        <p class="font-medium italic" style="color: #1e3a8a;">
+                            "If it's repetitive, we can automate it."
+                        </p>
+                    </div>
+                    <button onclick="bookDemo()" class="w-full text-white py-3 rounded-lg font-semibold transition-colors" style="background-color: #1e3a8a;" onmouseover="this.style.backgroundColor='#3b82f6'" onmouseout="this.style.backgroundColor='#1e3a8a'">
+                        Book Free Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Aifyy -->
+    <section id="why-us" class="py-20" style="background-color: #bfdbfe;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Our Clients Choose Aifyy</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background-color: #e0f2fe;">
+                        <span class="text-3xl">🤝</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: #1e3a8a;">Human-first systems</h3>
+                    <p style="color: #3b82f6;">No robotic messaging or generic content. Everything feels personal and authentic.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background-color: #e0f2fe;">
+                        <span class="text-3xl">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: #1e3a8a;">Speed + Simplicity</h3>
+                    <p style="color: #3b82f6;">Launch campaigns in days, not weeks. Get results faster with streamlined processes.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background-color: #e0f2fe;">
+                        <span class="text-3xl">🚀</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: #1e3a8a;">Founder-Led Expertise</h3>
+                    <p style="color: #3b82f6;">We've built systems for our own growth before yours. Real experience, proven results.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background-color: #e0f2fe;">
+                        <span class="text-3xl">🔍</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: #1e3a8a;">Transparent Process</h3>
+                    <p style="color: #3b82f6;">You approve every step before it goes live. Full visibility into your growth systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-white mb-6">
+                Ready to Automate Your Growth?
+            </h2>
+            <p class="text-xl mb-8" style="color: #bfdbfe;">
+                Book a free demo and see how Aifyy can transform your business with smart, humanized systems.
+            </p>
+            <button onclick="bookDemo()" class="px-8 py-4 rounded-lg font-semibold transition-colors text-lg pulse-animation" style="background-color: #e0f2fe; color: #1e3a8a;" onmouseover="this.style.backgroundColor='#bfdbfe'" onmouseout="this.style.backgroundColor='#e0f2fe'">
+                Book Your Free Demo Now
+            </button>
+            <p class="mt-4" style="color: #bfdbfe;">No commitment required • 30-minute consultation</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="text-white py-12" style="background-color: #1e3a8a;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4" style="color: #e0f2fe;">Aifyy</div>
+                    <p style="color: #bfdbfe;">Automating growth with smart, humanized systems.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2" style="color: #bfdbfe;">
+                        <li>B2B Outreach Systems</li>
+                        <li>Personal Branding</li>
+                        <li>Custom Automations</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="mb-2" style="color: #bfdbfe;">Ready to get started?</p>
+                    <button onclick="bookDemo()" class="text-white px-6 py-2 rounded-lg transition-colors" style="background-color: #3b82f6;" onmouseover="this.style.backgroundColor='#60a5fa'" onmouseout="this.style.backgroundColor='#3b82f6'">
+                        Book Free Demo
+                    </button>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 text-center" style="border-top: 1px solid #3b82f6; color: #bfdbfe;">
+                <p>&copy; 2024 Aifyy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function bookDemo() {
+            window.open('https://cal.com/pratika/30min', '_blank');
+        }
+
+        function scrollToServices() {
+            document.getElementById('services').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'965cd59a55dc0029',t:'MTc1MzYyNjYyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
