@@ -6,58 +6,271 @@
     <title>Aifyy - Automating Growth with Smart, Humanized Systems</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(ellipse at center, #0A0A0A 0%, #1A1A2E 50%, #16213E 100%);
+            color: #FFFFFF;
+            overflow-x: hidden;
+            position: relative;
         }
         
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: twinkle 4s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: 1;
         }
         
-        .card-hover {
-            transition: all 0.3s ease;
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
         }
         
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        .hero-bg {
+            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A2E 50%, #16213E 100%);
+            position: relative;
+            overflow: hidden;
         }
         
-        .pulse-animation {
-            animation: pulse 2s infinite;
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(184, 212, 240, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(22, 33, 62, 0.3) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 40%, rgba(168, 200, 232, 0.05) 50%, transparent 60%);
+            background-size: 300px 300px, 400px 400px, 60px 60px;
+            animation: shimmer 12s ease-in-out infinite;
+            pointer-events: none;
         }
         
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+        @keyframes nebula {
+            0%, 100% { 
+                transform: rotate(0deg) scale(1);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: rotate(180deg) scale(1.1);
+                opacity: 0.8;
+            }
         }
         
-        .flow-arrow {
-            animation: flow 3s ease-in-out infinite;
+        .geometric-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
         }
         
-        @keyframes flow {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(10px); }
+        .geometric-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(184, 212, 240, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(22, 33, 62, 0.2) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+            animation: float-pattern 20s ease-in-out infinite;
+        }
+        
+        .geometric-pattern::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 48%, rgba(168, 200, 232, 0.02) 49%, rgba(168, 200, 232, 0.02) 51%, transparent 52%);
+            background-size: 80px 80px;
+            animation: slide-pattern 25s linear infinite;
+        }
+        
+        @keyframes float-pattern {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+        
+        @keyframes slide-pattern {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(80px); }
+        }
+        
+        .textured-bg {
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(22, 33, 62, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(184, 212, 240, 0.05) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 49%, rgba(26, 26, 46, 0.2) 50%, transparent 51%);
+            background-size: 200px 200px, 300px 300px, 40px 40px;
+        }
+        
+        .glass-card {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(184, 212, 240, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(184, 212, 240, 0.1);
+            border-color: rgba(168, 200, 232, 0.4);
+            background: rgba(22, 33, 62, 0.9);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #B8D4F0, #A8C8E8, #FFFFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        
+        .pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(184, 212, 240, 0.4);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(200, 220, 245, 0.6);
+                transform: scale(1.05);
+            }
+        }
+        
+        .curved-section {
+            position: relative;
+        }
+        
+        .curved-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: #0A0A0A;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+        
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #A8C8E8;
+            display: block;
+        }
+        
+        .floating-icon {
+            animation: floatIcon 4s ease-in-out infinite;
+        }
+        
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .nav-glass {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(184, 212, 240, 0.1);
+        }
+        
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #B8D4F0, #16213E, #B8D4F0, transparent);
+            margin: 2rem 0;
+            border-radius: 2px;
+        }
+        
+        .quote-style {
+            position: relative;
+            padding: 2.5rem;
+            background: rgba(22, 33, 62, 0.8);
+            border-left: 4px solid #B8D4F0;
+            border-radius: 0 20px 20px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .quote-style::before {
+            content: '"';
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            font-size: 5rem;
+            color: #B8D4F0;
+            opacity: 0.3;
+            font-family: 'Space Grotesk', sans-serif;
         }
     </style>
 </head>
-<body style="background-color: #f1f5f9;">
+<body>
     <!-- Navigation -->
-    <nav class="shadow-sm fixed w-full top-0 z-50" style="background-color: #f1f5f9;">
+    <nav class="nav-glass fixed w-full top-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <div class="text-2xl font-bold" style="color: #1e3a8a;">Aifyy</div>
+                <div class="flex items-center fade-in-up">
+                    <div class="text-2xl font-bold gradient-text">Aifyy</div>
+                    <div class="ml-2 text-sm font-medium text-gray-500">- Dare to fly</div>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#services" class="transition-colors" style="color: #1e3a8a;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#1e3a8a'">Services</a>
-                    <a href="#why-us" class="transition-colors" style="color: #1e3a8a;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#1e3a8a'">Why Us</a>
-                    <a href="#contact" class="transition-colors" style="color: #1e3a8a;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#1e3a8a'">Contact</a>
+                <div class="hidden md:flex space-x-8 fade-in-up stagger-1">
+                    <a href="#services" class="font-medium text-gray-300 hover:text-[#B8D4F0] transition-colors duration-300">Services</a>
+                    <a href="#why-us" class="font-medium text-gray-300 hover:text-[#B8D4F0] transition-colors duration-300">Why Us</a>
+                    <a href="#contact" class="font-medium text-gray-300 hover:text-[#B8D4F0] transition-colors duration-300">Contact</a>
                 </div>
-                <button onclick="bookDemo()" class="text-white px-4 py-2 rounded-lg transition-colors" style="background-color: #1e3a8a;" onmouseover="this.style.backgroundColor='#3b82f6'" onmouseout="this.style.backgroundColor='#1e3a8a'">
+                <button onclick="bookDemo()" class="bg-gradient-to-r from-[#B8D4F0] to-[#A8C8E8] text-[#0A0A0A] px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:from-[#A8C8E8] hover:to-[#16213E] hover:text-white hover:scale-105 fade-in-up stagger-2">
                     Book Free Demo
                 </button>
             </div>
@@ -65,238 +278,264 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg pt-20 pb-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="hero-bg pt-20 pb-32 relative">
+        <div class="geometric-pattern"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center">
-                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                <h1 class="text-6xl md:text-7xl font-black text-white mb-8 fade-in-up" style="font-family: 'Space Grotesk', sans-serif;">
                     Automating Growth with<br>
-                    <span style="color: #e0f2fe;">Smart, Humanized Systems</span>
+                    <span class="gradient-text">Smart, Humanized Systems</span>
                 </h1>
-                <p class="text-xl mb-8 max-w-3xl mx-auto" style="color: #bfdbfe;">
+                <p class="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed fade-in-up stagger-1">
                     We build scalable outreach, personal branding, and custom automation systems that bring in leads, build authority, and save you hundreds of hours every month.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="bookDemo()" class="px-8 py-4 rounded-lg font-semibold transition-colors text-lg" style="background-color: #e0f2fe; color: #1e3a8a;" onmouseover="this.style.backgroundColor='#bfdbfe'" onmouseout="this.style.backgroundColor='#e0f2fe'">
-                        Book a Free Demo
+                <div class="flex flex-col sm:flex-row gap-6 justify-center fade-in-up stagger-2">
+                    <button onclick="bookDemo()" class="bg-gradient-to-r from-[#DA70D6] to-[#9370DB] text-white px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 pulse-glow" style="font-family: 'Space Grotesk', sans-serif;">
+                        🚀 Book a Free Demo
                     </button>
-                    <button onclick="scrollToServices()" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg" onmouseover="this.style.backgroundColor='white'; this.style.color='#1e3a8a'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'">
-                        See How It Works
+                    <button onclick="scrollToServices()" class="border-2 border-[#DA70D6] text-[#DA70D6] px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:bg-[#DA70D6] hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30" style="font-family: 'Space Grotesk', sans-serif;">
+                        🌌 See How It Works
                     </button>
                 </div>
             </div>
             
             <!-- Hero Visual -->
-            <div class="mt-16 flex justify-center">
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-4xl">
-                    <div class="flex items-center justify-center space-x-8">
+            <div class="mt-20 flex justify-center fade-in-up stagger-3">
+                <div class="glass-card rounded-3xl p-10 max-w-5xl">
+                    <div class="flex items-center justify-center space-x-12">
                         <div class="text-center">
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style="background-color: #e0f2fe;">
-                                <span class="text-2xl">📧</span>
+                            <div class="w-20 h-20 bg-gradient-to-br from-[#DA70D6] to-[#9370DB] rounded-full flex items-center justify-center mb-4 mx-auto floating-icon shadow-lg shadow-purple-500/50">
+                                <span class="text-3xl">🛸</span>
                             </div>
-                            <p class="text-white font-medium">Outreach</p>
+                            <p class="font-bold text-white">Outreach</p>
                         </div>
-                        <div class="flow-arrow text-white text-2xl">→</div>
+                        <div class="text-4xl text-[#DA70D6] animate-pulse">→</div>
                         <div class="text-center">
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style="background-color: #e0f2fe;">
-                                <span class="text-2xl">🎥</span>
+                            <div class="w-20 h-20 bg-gradient-to-br from-[#9370DB] to-[#8A2BE2] rounded-full flex items-center justify-center mb-4 mx-auto floating-icon shadow-lg shadow-purple-500/50" style="animation-delay: 1s;">
+                                <span class="text-3xl">🌟</span>
                             </div>
-                            <p class="text-white font-medium">Personal Brand</p>
+                            <p class="font-bold text-white">Personal Brand</p>
                         </div>
-                        <div class="flow-arrow text-white text-2xl">→</div>
+                        <div class="text-4xl text-[#DA70D6] animate-pulse">→</div>
                         <div class="text-center">
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style="background-color: #e0f2fe;">
-                                <span class="text-2xl">⚡</span>
+                            <div class="w-20 h-20 bg-gradient-to-br from-[#8A2BE2] to-[#4B0082] rounded-full flex items-center justify-center mb-4 mx-auto floating-icon shadow-lg shadow-purple-500/50" style="animation-delay: 2s;">
+                                <span class="text-3xl">🌌</span>
                             </div>
-                            <p class="text-white font-medium">Automation</p>
+                            <p class="font-bold text-white">Automation</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-[#0A0A0A] textured-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="fade-in-up">
+                    <span class="stats-counter">200+</span>
+                    <p class="text-gray-300 font-semibold">Hours Saved Monthly</p>
+                </div>
+                <div class="fade-in-up stagger-1">
+                    <span class="stats-counter">95%</span>
+                    <p class="text-gray-300 font-semibold">Client Satisfaction</p>
+                </div>
+                <div class="fade-in-up stagger-2">
+                    <span class="stats-counter">3x</span>
+                    <p class="text-gray-300 font-semibold">Average Lead Increase</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Problem-Solution Section -->
-    <section class="py-20 bg-white">
+    <section class="py-24 bg-[#0A0A0A] curved-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">
-                    Scaling your business shouldn't feel like a full-time hustle.
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold text-white mb-8 fade-in-up" style="font-family: 'Space Grotesk', sans-serif;">
+                    Scaling your business shouldn't feel like a <span class="gradient-text">full-time hustle</span>
                 </h2>
-                <div class="max-w-4xl mx-auto">
-                    <p class="text-xl text-gray-600 mb-8">
-                        Most founders struggle to consistently bring in leads, build their personal brand, or set up automations that actually save time. Aifyy solves this by creating <strong>done-for-you systems</strong> that:
-                    </p>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style="background-color: #bfdbfe;">
-                                <span class="text-2xl">🎯</span>
+                <div class="section-divider max-w-md mx-auto fade-in-up stagger-1"></div>
+                <div class="max-w-5xl mx-auto">
+                    <div class="quote-style fade-in-up stagger-2">
+                        <p class="text-xl text-gray-300 leading-relaxed">
+                            Most founders struggle to consistently bring in leads, build their personal brand, or set up automations that actually save time. Aifyy solves this by creating <strong class="text-[#B8D4F0]">smart, automated systems</strong> that work while you sleep.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-10 mt-16">
+                        <div class="text-center fade-in-up stagger-3">
+                            <div class="w-24 h-24 bg-gradient-to-br from-[#DA70D6] to-[#9370DB] rounded-full flex items-center justify-center mb-6 mx-auto floating-icon shadow-lg shadow-purple-500/50">
+                                <span class="text-4xl">🎯</span>
                             </div>
-                            <h3 class="font-semibold mb-2" style="color: #1e3a8a;">Reach your ideal clients at scale</h3>
+                            <h3 class="text-xl font-bold mb-4 text-[#DA70D6]">Reach your ideal clients at scale</h3>
+                            <p class="text-gray-300">Automated outreach that feels personal and converts</p>
                         </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style="background-color: #bfdbfe;">
-                                <span class="text-2xl">👑</span>
+                        <div class="text-center fade-in-up stagger-4">
+                            <div class="w-24 h-24 bg-gradient-to-br from-[#9370DB] to-[#8A2BE2] rounded-full flex items-center justify-center mb-6 mx-auto floating-icon shadow-lg shadow-purple-500/50" style="animation-delay: 1s;">
+                                <span class="text-4xl">👑</span>
                             </div>
-                            <h3 class="font-semibold mb-2" style="color: #1e3a8a;">Position you as an industry authority</h3>
+                            <h3 class="text-xl font-bold mb-4 text-[#DA70D6]">Position you as an industry authority</h3>
+                            <p class="text-gray-300">Build trust and credibility with authentic content</p>
                         </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style="background-color: #bfdbfe;">
-                                <span class="text-2xl">🤖</span>
+                        <div class="text-center fade-in-up stagger-5">
+                            <div class="w-24 h-24 bg-gradient-to-br from-[#8A2BE2] to-[#4B0082] rounded-full flex items-center justify-center mb-6 mx-auto floating-icon shadow-lg shadow-purple-500/50" style="animation-delay: 2s;">
+                                <span class="text-4xl">🤖</span>
                             </div>
-                            <h3 class="font-semibold mb-2" style="color: #1e3a8a;">Automate repetitive tasks with precision</h3>
+                            <h3 class="text-xl font-bold mb-4 text-[#DA70D6]">Automate repetitive tasks with precision</h3>
+                            <p class="text-gray-300">Focus on growth while systems handle the busy work</p>
                         </div>
                     </div>
-                    <p class="text-xl text-gray-600 mt-8">
-                        With Aifyy, you get systems that work while you focus on growing your business.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20" style="background-color: #bfdbfe;">
+    <section id="services" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Three Core Systems</h2>
-                <p class="text-xl text-gray-600 mb-8">Choose one or combine all three for maximum impact</p>
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold text-[#0A0A0A] mb-6 fade-in-up" style="font-family: 'Space Grotesk', sans-serif;">Our <span class="gradient-text">Three Core Systems</span></h2>
+                <p class="text-xl text-[#4A5568] mb-12 fade-in-up stagger-1">Choose one or combine all three for maximum impact</p>
                 
                 <!-- Service Delivery Options -->
-                <div class="flex justify-center mb-8">
-                    <div class="bg-white rounded-lg p-6 shadow-lg max-w-4xl">
-                        <h3 class="text-xl font-semibold mb-4" style="color: #1e3a8a;">Choose Your Service Level:</h3>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div class="text-center p-4 rounded-lg" style="background-color: #e0f2fe;">
-                                <div class="w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto" style="background-color: #1e3a8a;">
-                                    <span class="text-white text-xl">🚀</span>
+                <div class="flex justify-center mb-16 fade-in-up stagger-2">
+                    <div class="bg-gray-50 rounded-2xl p-8 max-w-5xl border border-gray-200">
+                        <h3 class="text-2xl font-bold mb-8 text-[#0A0A0A]" style="font-family: 'Space Grotesk', sans-serif;">Choose Your Service Level:</h3>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="text-center p-6 bg-white rounded-xl shadow-lg transition-all duration-300 hover:scale-105 border border-gray-100">
+                                <div class="w-16 h-16 bg-gradient-to-br from-[#DA70D6] to-[#9370DB] rounded-full flex items-center justify-center mb-4 mx-auto shadow-lg shadow-purple-500/30">
+                                    <span class="text-white text-2xl">🚀</span>
                                 </div>
-                                <h4 class="font-semibold mb-2" style="color: #1e3a8a;">Done For You</h4>
-                                <p class="text-sm text-gray-600">We handle everything from setup to execution</p>
+                                <h4 class="font-bold mb-3 text-[#4B0082]">Done For You</h4>
+                                <p class="text-[#4A5568]">We handle everything from setup to execution</p>
                             </div>
-                            <div class="text-center p-4 rounded-lg" style="background-color: #e0f2fe;">
-                                <div class="w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto" style="background-color: #3b82f6;">
-                                    <span class="text-white text-xl">🤝</span>
+                            <div class="text-center p-6 bg-white rounded-xl shadow-lg transition-all duration-300 hover:scale-105 border border-gray-100">
+                                <div class="w-16 h-16 bg-gradient-to-br from-[#9370DB] to-[#8A2BE2] rounded-full flex items-center justify-center mb-4 mx-auto shadow-lg shadow-purple-500/30">
+                                    <span class="text-white text-2xl">🤝</span>
                                 </div>
-                                <h4 class="font-semibold mb-2" style="color: #1e3a8a;">Done With You</h4>
-                                <p class="text-sm text-gray-600">We guide you through the process together</p>
+                                <h4 class="font-bold mb-3 text-[#4B0082]">Done With You</h4>
+                                <p class="text-[#4A5568]">We guide you through the process together</p>
                             </div>
-                            <div class="text-center p-4 rounded-lg" style="background-color: #e0f2fe;">
-                                <div class="w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto" style="background-color: #60a5fa;">
-                                    <span class="text-white text-xl">🛠️</span>
+                            <div class="text-center p-6 bg-white rounded-xl shadow-lg transition-all duration-300 hover:scale-105 border border-gray-100">
+                                <div class="w-16 h-16 bg-gradient-to-br from-[#8A2BE2] to-[#4B0082] rounded-full flex items-center justify-center mb-4 mx-auto shadow-lg shadow-purple-500/30">
+                                    <span class="text-white text-2xl">🛠️</span>
                                 </div>
-                                <h4 class="font-semibold mb-2" style="color: #1e3a8a;">Do It Yourself</h4>
-                                <p class="text-sm text-gray-600">Get the tools and training to do it yourself</p>
+                                <h4 class="font-bold mb-3 text-[#4B0082]">Do It Yourself</h4>
+                                <p class="text-[#4A5568]">Get the tools and training to do it yourself</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-8">
+            <div class="grid lg:grid-cols-3 gap-10">
                 <!-- B2B Outreach System -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: #bfdbfe;">
-                        <span class="text-3xl">📈</span>
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-200 transition-all duration-300 hover:shadow-xl hover:scale-105 fade-in-up stagger-3">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#DA70D6] to-[#9370DB] rounded-full flex items-center justify-center mb-8 shadow-lg shadow-purple-500/50">
+                        <span class="text-4xl">🛸</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4" style="color: #1e3a8a;">B2B Outreach System</h3>
-                    <p class="text-lg font-semibold mb-6" style="color: #3b82f6;">Your Sales Pipeline on Autopilot.</p>
-                    <ul class="space-y-3 mb-8">
+                    <h3 class="text-2xl font-bold mb-4 text-[#4B0082]" style="font-family: 'Space Grotesk', sans-serif;">B2B Outreach System</h3>
+                    <p class="text-lg font-semibold mb-8 text-[#9370DB]">Your Sales Pipeline on Autopilot.</p>
+                    <ul class="space-y-4 mb-10">
                         <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="text-gray-700">Hyper-personalized cold emails that don't feel cold</span>
+                            <span class="text-[#DA70D6] mr-3 text-xl">✓</span>
+                            <span class="text-[#4A5568]">Hyper-personalized cold emails that don't feel cold</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="text-gray-700">Multi-channel outreach (Email + LinkedIn)</span>
+                            <span class="text-[#DA70D6] mr-3 text-xl">✓</span>
+                            <span class="text-[#4A5568]">Multi-channel outreach (Email + LinkedIn)</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="text-gray-700">Targeted lead lists curated for your niche</span>
+                            <span class="text-[#DA70D6] mr-3 text-xl">✓</span>
+                            <span class="text-[#4A5568]">Targeted lead lists curated for your niche</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="text-gray-700">A/B tested sequences to improve response rates</span>
+                            <span class="text-[#DA70D6] mr-3 text-xl">✓</span>
+                            <span class="text-[#4A5568]">A/B tested sequences to improve response rates</span>
                         </li>
                     </ul>
-                    <div class="p-4 rounded-lg mb-6" style="background-color: #e0f2fe;">
-                        <p class="font-medium italic" style="color: #1e3a8a;">
+                    <div class="bg-white rounded-xl p-6 mb-8 border-l-4 border-[#DA70D6]">
+                        <p class="font-medium italic text-[#4B0082]">
                             "Imagine waking up every day to warm, qualified leads – without lifting a finger."
                         </p>
                     </div>
-                    <button onclick="bookDemo()" class="w-full text-white py-3 rounded-lg font-semibold transition-colors" style="background-color: #1e3a8a;" onmouseover="this.style.backgroundColor='#3b82f6'" onmouseout="this.style.backgroundColor='#1e3a8a'">
-                        Book Free Demo
+                    <button onclick="bookDemo()" class="w-full bg-gradient-to-r from-[#DA70D6] to-[#9370DB] text-white py-4 rounded-full font-bold transition-all duration-300 hover:from-[#9370DB] hover:to-[#8A2BE2] hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                        🚀 Book Free Demo
                     </button>
                 </div>
 
                 <!-- Personal Branding System -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border-2" style="border-color: #3b82f6;">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background-color: #bfdbfe;">
-                            <span class="text-3xl">🎬</span>
+                <div class="bg-gray-50 rounded-3xl p-8 border-2 border-[#DA70D6] transition-all duration-300 hover:shadow-xl hover:scale-105 fade-in-up stagger-4">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="w-20 h-20 bg-gradient-to-br from-[#9370DB] to-[#8A2BE2] rounded-full flex items-center justify-center shadow-lg shadow-purple-500/50">
+                            <span class="text-4xl">🌟</span>
                         </div>
-                        <span class="px-3 py-1 rounded-full text-sm font-semibold" style="background-color: #3b82f6; color: white;">POPULAR</span>
+                        <span class="bg-[#4B0082] text-white px-4 py-2 rounded-full text-sm font-bold">POPULAR</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4" style="color: #1e3a8a;">Personal Branding System</h3>
-                    <p class="text-lg font-semibold mb-6" style="color: #3b82f6;">Turn your ideas into a powerful personal brand in minutes.</p>
-                    <ul class="space-y-3 mb-8">
+                    <h3 class="text-2xl font-bold mb-4 text-[#4B0082]" style="font-family: 'Space Grotesk', sans-serif;">Personal Branding System</h3>
+                    <p class="text-lg font-semibold mb-8 text-[#9370DB]">Turn your ideas into a powerful personal brand in minutes.</p>
+                    <ul class="space-y-4 mb-10">
                         <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="text-gray-700">Humanized videos in your avatar and voice</span>
+                            <span class="text-[#DA70D6] mr-3 text-xl">✓</span>
+                            <span class="text-[#4A5568]">Humanized videos in your avatar and voice</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="text-gray-700">Create from just text or audio notes</span>
+                            <span class="text-[#DA70D6] mr-3 text-xl">✓</span>
+                            <span class="text-[#4A5568]">Create from just text or audio notes</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="text-gray-700">Build trust with authentic storytelling</span>
+                            <span class="text-[#DA70D6] mr-3 text-xl">✓</span>
+                            <span class="text-[#4A5568]">Build trust with authentic storytelling</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="text-gray-700">LinkedIn-ready posts and videos</span>
+                            <span class="text-[#DA70D6] mr-3 text-xl">✓</span>
+                            <span class="text-[#4A5568]">LinkedIn-ready posts and videos</span>
                         </li>
                     </ul>
-                    <div class="p-4 rounded-lg mb-6" style="background-color: #e0f2fe;">
-                        <p class="font-medium italic" style="color: #1e3a8a;">
+                    <div class="bg-white rounded-xl p-6 mb-8 border-l-4 border-[#DA70D6]">
+                        <p class="font-medium italic text-[#4B0082]">
                             "Your personal brand is your biggest growth lever – let's make it effortless."
                         </p>
                     </div>
-                    <button onclick="bookDemo()" class="w-full text-white py-3 rounded-lg font-semibold transition-colors" style="background-color: #3b82f6;" onmouseover="this.style.backgroundColor='#1e3a8a'" onmouseout="this.style.backgroundColor='#3b82f6'">
-                        Book Free Demo
+                    <button onclick="bookDemo()" class="w-full bg-gradient-to-r from-[#9370DB] to-[#8A2BE2] text-white py-4 rounded-full font-bold transition-all duration-300 hover:from-[#DA70D6] hover:to-[#9370DB] hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                        🌟 Book Free Demo
                     </button>
                 </div>
 
                 <!-- Custom Automations -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: #bfdbfe;">
-                        <span class="text-3xl">⚙️</span>
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-200 transition-all duration-300 hover:shadow-xl hover:scale-105 fade-in-up stagger-5">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#A8C8E8] to-[#16213E] rounded-full flex items-center justify-center mb-8">
+                        <span class="text-4xl">⚙️</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4" style="color: #1e3a8a;">Custom Automations</h3>
-                    <p class="text-lg font-semibold mb-6" style="color: #3b82f6;">Automate the Busy Work. Focus on Impact.</p>
-                    <ul class="space-y-3 mb-8">
+                    <h3 class="text-2xl font-bold mb-4 text-[#16213E]" style="font-family: 'Space Grotesk', sans-serif;">Custom Automations</h3>
+                    <p class="text-lg font-semibold mb-8 text-[#A8C8E8]">Automate the Busy Work. Focus on Impact.</p>
+                    <ul class="space-y-4 mb-10">
                         <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="text-gray-700">No more manual lead tracking or follow-ups</span>
+                            <span class="text-[#B8D4F0] mr-3 text-xl">✓</span>
+                            <span class="text-[#4A5568]">No more manual lead tracking or follow-ups</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="text-gray-700">Custom Zapier/Make workflows</span>
+                            <span class="text-[#B8D4F0] mr-3 text-xl">✓</span>
+                            <span class="text-[#4A5568]">Custom n8n/Make workflows</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="text-gray-700">CRM, email, and analytics integrations</span>
+                            <span class="text-[#B8D4F0] mr-3 text-xl">✓</span>
+                            <span class="text-[#4A5568]">CRM, email, and analytics integrations</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="text-gray-700">Save 20+ hours a week</span>
+                            <span class="text-[#B8D4F0] mr-3 text-xl">✓</span>
+                            <span class="text-[#4A5568]">Save 20+ hours a week</span>
                         </li>
                     </ul>
-                    <div class="p-4 rounded-lg mb-6" style="background-color: #e0f2fe;">
-                        <p class="font-medium italic" style="color: #1e3a8a;">
+                    <div class="bg-white rounded-xl p-6 mb-8 border-l-4 border-[#B8D4F0]">
+                        <p class="font-medium italic text-[#16213E]">
                             "If it's repetitive, we can automate it."
                         </p>
                     </div>
-                    <button onclick="bookDemo()" class="w-full text-white py-3 rounded-lg font-semibold transition-colors" style="background-color: #1e3a8a;" onmouseover="this.style.backgroundColor='#3b82f6'" onmouseout="this.style.backgroundColor='#1e3a8a'">
+                    <button onclick="bookDemo()" class="w-full bg-gradient-to-r from-[#A8C8E8] to-[#16213E] text-white py-4 rounded-full font-bold transition-all duration-300 hover:from-[#B8D4F0] hover:to-[#A8C8E8] hover:scale-105">
                         Book Free Demo
                     </button>
                 </div>
@@ -305,86 +544,105 @@
     </section>
 
     <!-- Why Choose Aifyy -->
-    <section id="why-us" class="py-20" style="background-color: #bfdbfe;">
+    <section id="why-us" class="py-24 bg-[#0A0A0A]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Our Clients Choose Aifyy</h2>
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold text-white mb-8 fade-in-up" style="font-family: 'Space Grotesk', sans-serif;">Why Our Clients <span class="gradient-text">Choose Aifyy</span></h2>
+                <div class="section-divider max-w-md mx-auto fade-in-up stagger-1"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background-color: #e0f2fe;">
-                        <span class="text-3xl">🤝</span>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="text-center fade-in-up stagger-2">
+                    <div class="w-24 h-24 bg-gradient-to-br from-[#B8D4F0] to-[#A8C8E8] rounded-full flex items-center justify-center mb-8 mx-auto floating-icon">
+                        <span class="text-4xl">🤝</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-4" style="color: #1e3a8a;">Human-first systems</h3>
-                    <p style="color: #3b82f6;">No robotic messaging or generic content. Everything feels personal and authentic.</p>
+                    <h3 class="text-xl font-bold mb-4 text-[#B8D4F0]">Human-first systems</h3>
+                    <p class="text-gray-300">No robotic messaging or generic content. Everything feels personal and authentic.</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background-color: #e0f2fe;">
-                        <span class="text-3xl">⚡</span>
+                <div class="text-center fade-in-up stagger-3">
+                    <div class="w-24 h-24 bg-gradient-to-br from-[#16213E] to-[#B8D4F0] rounded-full flex items-center justify-center mb-8 mx-auto floating-icon" style="animation-delay: 1s;">
+                        <span class="text-4xl">⚡</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-4" style="color: #1e3a8a;">Speed + Simplicity</h3>
-                    <p style="color: #3b82f6;">Launch campaigns in days, not weeks. Get results faster with streamlined processes.</p>
+                    <h3 class="text-xl font-bold mb-4 text-[#B8D4F0]">Speed + Simplicity</h3>
+                    <p class="text-gray-300">Launch campaigns in days, not weeks. Get results faster with streamlined processes.</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background-color: #e0f2fe;">
-                        <span class="text-3xl">🚀</span>
+                <div class="text-center fade-in-up stagger-4">
+                    <div class="w-24 h-24 bg-gradient-to-br from-[#A8C8E8] to-[#16213E] rounded-full flex items-center justify-center mb-8 mx-auto floating-icon" style="animation-delay: 2s;">
+                        <span class="text-4xl">🚀</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-4" style="color: #1e3a8a;">Founder-Led Expertise</h3>
-                    <p style="color: #3b82f6;">We've built systems for our own growth before yours. Real experience, proven results.</p>
+                    <h3 class="text-xl font-bold mb-4 text-[#B8D4F0]">Founder-Led Expertise</h3>
+                    <p class="text-gray-300">We've built systems for our own growth before yours. Real experience, proven results.</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background-color: #e0f2fe;">
-                        <span class="text-3xl">🔍</span>
+                <div class="text-center fade-in-up stagger-5">
+                    <div class="w-24 h-24 bg-gradient-to-br from-[#B8D4F0] to-[#16213E] rounded-full flex items-center justify-center mb-8 mx-auto floating-icon" style="animation-delay: 3s;">
+                        <span class="text-4xl">🔍</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-4" style="color: #1e3a8a;">Transparent Process</h3>
-                    <p style="color: #3b82f6;">You approve every step before it goes live. Full visibility into your growth systems.</p>
+                    <h3 class="text-xl font-bold mb-4 text-[#B8D4F0]">Transparent Process</h3>
+                    <p class="text-gray-300">You approve every step before it goes live. Full visibility into your growth systems.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 gradient-bg">
-        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-white mb-6">
-                Ready to Automate Your Growth?
+    <section class="py-24 hero-bg relative">
+        <div class="geometric-pattern"></div>
+        
+        <div class="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-5xl font-bold text-white mb-8 fade-in-up" style="font-family: 'Space Grotesk', sans-serif;">
+                Ready to <span class="gradient-text">Automate Your Growth?</span>
             </h2>
-            <p class="text-xl mb-8" style="color: #bfdbfe;">
+            <p class="text-xl text-gray-300 mb-12 fade-in-up stagger-1">
                 Book a free demo and see how Aifyy can transform your business with smart, humanized systems.
             </p>
-            <button onclick="bookDemo()" class="px-8 py-4 rounded-lg font-semibold transition-colors text-lg pulse-animation" style="background-color: #e0f2fe; color: #1e3a8a;" onmouseover="this.style.backgroundColor='#bfdbfe'" onmouseout="this.style.backgroundColor='#e0f2fe'">
+            <button onclick="bookDemo()" class="bg-gradient-to-r from-[#B8D4F0] to-[#A8C8E8] text-[#0A0A0A] px-12 py-5 rounded-full font-bold text-xl transition-all duration-300 hover:scale-110 pulse-glow fade-in-up stagger-2" style="font-family: 'Space Grotesk', sans-serif;">
                 Book Your Free Demo Now
             </button>
-            <p class="mt-4" style="color: #bfdbfe;">No commitment required • 30-minute consultation</p>
+            <p class="mt-6 text-gray-400 fade-in-up stagger-3">No commitment required • 30-minute consultation</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="text-white py-12" style="background-color: #1e3a8a;">
+    <footer id="contact" class="bg-[#16213E] text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <div class="text-2xl font-bold mb-4" style="color: #e0f2fe;">Aifyy</div>
-                    <p style="color: #bfdbfe;">Automating growth with smart, humanized systems.</p>
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="fade-in-up">
+                    <div class="flex items-center mb-6">
+                        <div class="text-2xl font-bold gradient-text" style="font-family: 'Space Grotesk', sans-serif;">Aifyy</div>
+                    </div>
+                    <p class="text-[#B8D4F0] mb-3 font-semibold">Dare to fly</p>
+                    <p class="text-gray-300">Automating growth with smart, humanized systems.</p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Services</h3>
-                    <ul class="space-y-2" style="color: #bfdbfe;">
-                        <li>B2B Outreach Systems</li>
-                        <li>Personal Branding</li>
-                        <li>Custom Automations</li>
+                <div class="fade-in-up stagger-1">
+                    <h3 class="text-xl font-bold mb-6 text-white" style="font-family: 'Space Grotesk', sans-serif;">Services</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="hover:text-[#B8D4F0] transition-colors cursor-pointer">B2B Outreach Systems</li>
+                        <li class="hover:text-[#B8D4F0] transition-colors cursor-pointer">Personal Branding</li>
+                        <li class="hover:text-[#B8D4F0] transition-colors cursor-pointer">Custom Automations</li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
-                    <p class="mb-2" style="color: #bfdbfe;">Ready to get started?</p>
-                    <button onclick="bookDemo()" class="text-white px-6 py-2 rounded-lg transition-colors" style="background-color: #3b82f6;" onmouseover="this.style.backgroundColor='#60a5fa'" onmouseout="this.style.backgroundColor='#3b82f6'">
+                <div class="fade-in-up stagger-2">
+                    <h3 class="text-xl font-bold mb-6 text-white" style="font-family: 'Space Grotesk', sans-serif;">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-4">📞</span>
+                            <a href="tel:+919929724521" class="text-gray-300 hover:text-[#B8D4F0] transition-colors">+91 9929724521</a>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-4">✉️</span>
+                            <a href="mailto:pratik@automateboringwork.com" class="text-gray-300 hover:text-[#B8D4F0] transition-colors">pratik@automateboringwork.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in-up stagger-3">
+                    <h3 class="text-xl font-bold mb-6 text-white" style="font-family: 'Space Grotesk', sans-serif;">Get Started</h3>
+                    <p class="text-gray-300 mb-6">Ready to automate your growth?</p>
+                    <button onclick="bookDemo()" class="bg-gradient-to-r from-[#B8D4F0] to-[#A8C8E8] text-[#0A0A0A] px-8 py-4 rounded-full font-bold transition-all duration-300 hover:from-[#A8C8E8] hover:to-[#16213E] hover:text-white hover:scale-105">
                         Book Free Demo
                     </button>
                 </div>
             </div>
-            <div class="mt-8 pt-8 text-center" style="border-top: 1px solid #3b82f6; color: #bfdbfe;">
+            <div class="mt-12 pt-8 text-center border-t border-[#B8D4F0] text-gray-400">
                 <p>&copy; 2024 Aifyy. All rights reserved.</p>
             </div>
         </div>
@@ -415,15 +673,35 @@
             });
         });
 
-        // Add scroll effect to navigation
+        // Enhanced scroll effects
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
-                nav.classList.add('shadow-lg');
+                nav.classList.add('shadow-2xl');
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
             } else {
-                nav.classList.remove('shadow-lg');
+                nav.classList.remove('shadow-2xl');
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
             }
         });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'965cd59a55dc0029',t:'MTc1MzYyNjYyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'969f677016034737',t:'MTc1NDMyNDY1Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
